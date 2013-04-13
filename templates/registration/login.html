@@ -1,0 +1,20 @@
+{% block main %}
+
+<p>User: {{ user.username }}</p>
+{% if attempt %}
+<p>Success: {{ success }}</p>
+{% endif %}
+<form action='{% url 'login' %}' method='POST'>
+  {% csrf_token %}
+  <div class='input'>
+    <input name='username' type='text' placeholder='Username'>
+  </div>
+  <div class='input'>
+    <input name='password' type='password' placeholder='Password'>
+  </div>
+  <div class='submit'>
+    <input type='submit' value='Login'>
+  </div>
+</form>
+
+{% endblock %}
