@@ -22,4 +22,4 @@ class PostList(generics.ListCreateAPIView):
         queryset = self.model.objects
         if 'before' in self.request.GET:
             queryset = queryset.filter(id__lt=int(self.request.GET['before']))
-        return queryset.order_by('-created')
+        return queryset.order_by('-created')[:2]

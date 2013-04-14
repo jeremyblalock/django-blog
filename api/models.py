@@ -22,7 +22,8 @@ class Post(models.Model):
                     self.save()
                     break
                 except:
-                    self.slug = slugify(self.title)
+                    self.slug = slugify(self.title) + '-%d' % count
+                    print '========>', self.slug
                     count += 1
         return super(self.__class__, self).save(*args, **kwargs)
     def update_likes(self):

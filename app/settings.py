@@ -1,10 +1,12 @@
 import os
 # Django settings for app project.
 
+BASE_DIR = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) +'/..')
+
 REST_FRAMEWORK = { 
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.BrowsableAPIRenderer',
         'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
     ),  
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
@@ -76,10 +78,12 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 # Additional locations of static files
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    STATIC_DIR,
 )
 
 # List of finder classes that know how to find static files in
