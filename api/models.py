@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import markdown
 from django.template.defaultfilters import slugify
+from datetime import datetime
+import dates
 
 class Post(models.Model):
     title = models.CharField(max_length=255, blank=False)
@@ -12,6 +14,9 @@ class Post(models.Model):
     author = models.ForeignKey(User, blank=True, null=True)
     slug = models.CharField(max_length=255, unique=True)
     likes = models.IntegerField(default=0)
+    def relative_time(self):
+        return dates.timesince(self.created) + ' ago'
+
     def save(self, *args, **kwargs):
         self.body = markdown.markdown(self.body_md)
         if not self.slug:
