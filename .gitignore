@@ -3,3 +3,4 @@ venv
 *.pyc
 static/css/.sass-cache
 tmp.db
+app/local_settings.py
