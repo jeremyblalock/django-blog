@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 # Django settings for app project.
 
 BASE_DIR = os.path.abspath(os.path.dirname(os.path.abspath(__file__)) +'/..')
