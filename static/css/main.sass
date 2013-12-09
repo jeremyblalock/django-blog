@@ -18,6 +18,8 @@ body
   overflow-x: hidden
 h1, h2, h3, h4, h5, h6
   font-family: $font-default
+p
+  margin-bottom: 1em
 a
   color: inherit
   text-decoration: none
@@ -47,7 +49,16 @@ input[type="text"], input[type="email"], input[type="submit"]
     display: none
 
 .post
+  margin-bottom: 40px
+  padding-bottom: 30px
+  border-bottom: 1px solid mix($color, $bg, 10%)
   max-width: 600px
+  .post-bottom
+    font-size: 14px
+    text-transform: uppercase
+    letter-spacing: .07em
+    color: mix($color, $bg, 30%)
+    margin-top: 20px
   h1
     margin-bottom: 24px
   .body

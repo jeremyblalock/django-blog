@@ -4,8 +4,10 @@
     <%= post.body %>
   </div>
   <footer class="post-bottom">
+    {% comment %}
     <div class="fb-like" data-href="http://jeremyblalock.co/posts/<%= post.slug %>" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div>
     <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://jeremyblalock.co/posts/<%= post.slug %>" data-via="jeremyblalock">Tweet</a>
+    {% endcomment %}
     <p>Posted <%= post.posted %></p>
   </footer>
 </div>
