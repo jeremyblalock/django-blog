@@ -23,6 +23,11 @@ define([
       alert("SINGLE POST, ID=" + id);
     });
     Backbone.history.start();
+    $(document).on('click', '#topnav a', function() {
+        $(this).parents('ul').find('.active').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    })
   }
   return {
     initialize: initialize

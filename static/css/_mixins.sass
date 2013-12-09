@@ -1,25 +1,21 @@
 $grayLight: #ccc
 $placeholderText: $grayLight
 
-@mixin keyframes($name)
-  @-webkit-keyframes #{$name}
-    @content
-  @-moz-keyframes #{$name}
-    @content
-  @-ms-keyframes #{$name}
-    @content
-  @keyframes #{$name}
-    @content
+@mixin keyframes($animation-name)
+  @-webkit-keyframes #{ $animation-name }
+    from
+      -webkit-transform: rotate(0deg)
+    to
+      -webkit-transform: rotate(360deg)
 
-@include keyframes(blink)
-  from
-    opacity: .25
-  to
-    opacity: .75
+  // @-moz-keyframes #{ $animation-name }
+  //   @content
 
-@mixin keyframes-tag($name, $time, $function: ease-in-out, $alternate: normal)
-  @each $prefix in -webkit-, -moz-, -ms-
-    #{$prefix}animation: $name $time $alternate $function infinite
+  // @keyframes #{ $animation-name }
+  //   @content
+
+@include keyframes(spin)
+
 
 @mixin placeholder($color: $placeholderText)
   &:-moz-placeholder
@@ -62,7 +58,19 @@ $placeholderText: $grayLight
 @mixin navbarVerticalAlign($elementHeight)
   margin-top: ($navbarHeight - $elementHeight) / 2
 
-@mixin border-radius($r)
+@mixin border-left-radius($r: 3px)
+  -webkit-border-radius: $r 0 0 $r
+  -moz-border-radius: $r 0 0 $r
+  -o-border-radius: $r 0 0 $r
+  border-radius: $r 0 0 $r
+
+@mixin border-right-radius($r: 3px)
+  -webkit-border-radius: 0 $r $r 0
+  -moz-border-radius: 0 $r $r 0
+  -o-border-radius: 0 $r $r 0
+  border-radius: 0 $r $r 0
+
+@mixin border-radius($r: 3px)
   -webkit-border-radius: $r
   -moz-border-radius: $r
   -o-border-radius: $r
@@ -143,6 +151,16 @@ $placeholderText: $grayLight
   $c2: darken( $c, $amount * .5)
   @include gradient($c1, $c2)
 
+@mixin opacity($opacity)
+  opacity: $opacity
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacity * 100 + ")"
 
+@mixin drop-shadow($dist: 3px, $blur: 7px, $color: rgba(0, 0, 0, .4))
+  -webkit-box-shadow: 0px $dist $blur $color
+  -moz-box-shadow:    0px $dist $blur $color
+  -o-box-shadow:      0px $dist $blur $color
+  box-shadow:         0px $dist $blur $color
 
+@mixin antialiased
+  -webkit-font-smoothing: antialiased
 

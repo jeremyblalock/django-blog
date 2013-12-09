@@ -1,38 +1,12 @@
-@-webkit-keyframes blink {
+@-webkit-keyframes spin {
   from {
-    opacity: 0.25; }
+    -webkit-transform: rotate(0deg); }
 
   to {
-    opacity: 0.75; } }
-
-@-moz-keyframes blink {
-  from {
-    opacity: 0.25; }
-
-  to {
-    opacity: 0.75; } }
-
-@-ms-keyframes blink {
-  from {
-    opacity: 0.25; }
-
-  to {
-    opacity: 0.75; } }
-
-@keyframes blink {
-  from {
-    opacity: 0.25; }
-
-  to {
-    opacity: 0.75; } }
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased; }
+    -webkit-transform: rotate(360deg); } }
 
 body {
-  font-family: "Averia Serif Libre", Georgia, serif;
+  font-family: "Neris", "Source Sans Pro", Helvetica, sans-serif;
   background: white;
   color: black;
   font-size: 16px;
@@ -40,11 +14,7 @@ body {
   overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "neo";
-  margin-bottom: 0.5em; }
-
-h1, h2, h3, h4, h5, h6, p {
-  line-height: 1.4em; }
+  font-family: "Neris", "Source Sans Pro", Helvetica, sans-serif; }
 
 a {
   color: inherit;
@@ -61,89 +31,81 @@ input[type="text"], input[type="email"], input[type="submit"] {
   outline: none !important; }
 
 #top {
-  color: #b2b2b2;
   text-align: left;
   padding: 20px;
   border-bottom: 1px solid #d9d9d9; }
-  #top .brand_icon {
-    font-family: "neo";
-    font-weight: 500; }
-  #top .brand_icon, #top h2 {
+
+#branding {
+  width: 260px;
+  height: 70px;
+  text-index: -10000px;
+  overflow: hidden;
+  font-size: 0;
+  color: transparent;
+  background: url("../../img/logo.svg");
+  margin: 40px; }
+  #branding small {
     display: none; }
-  #top #branding span {
-    font-weight: 200; }
-  #top h1, #top h2, #top h3, #top h4, #top h5, #top h6, #top p {
-    line-height: 1em;
-    margin-bottom: 0; }
 
-#main {
-  padding: 20px; }
-  #main h1 {
-    font-size: 32px;
-    margin-bottom: 0em; }
-  #main h2 {
-    font-size: 22px; }
-  #main h3, #main h4, #main p {
-    font-size: 18px; }
-
-@media screen and (min-width: 736px) {
-  p {
+.post {
+  max-width: 600px; }
+  .post h1 {
+    margin-bottom: 24px; }
+  .post .body {
+    font-size: 20px;
+    font-family: "Cambria";
     line-height: 1.6em; }
 
+@media (min-width: 992px) {
   #top {
     background: transparent;
     padding: 0;
     position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 220px;
-    border-right: 1px solid #d9d9d9;
-    text-align: center; }
-    #top h1, #top h2, #top h3, #top h4, #top h5, #top h6, #top p {
-      line-height: 1.4em; }
-    #top h2, #top .brand_icon {
-      display: block; }
-    #top .brand_icon {
-      font-size: 105px;
-      padding: 0.5em 0 0 0; }
-    #top h1, #top h2, #top h3, #top h4, #top h5, #top h6 {
-      padding-bottom: 1em; }
+    left: 30px;
+    top: 70px;
+    width: 340px;
+    border-bottom: none;
+    padding-bottom: 50px; }
+    #top:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(0, 0, 0, 0.1); }
 
   #main {
-    margin-left: 220px;
-    padding-top: 50px; }
-    #main h1 {
-      font-size: 48px;
-      margin-bottom: 0em; }
-    #main h2 {
-      font-size: 32px; }
-    #main h3 {
-      font-size: 24px; }
-    #main h4, #main p {
-      font-size: 20px; } }
-@media screen and (min-width: 1000px) {
-  #top {
-    width: 310px;
-    border-right: 1px solid #d9d9d9; }
-    #top .brand_icon {
-      font-size: 105px;
-      padding: 0.5em 0 0 0; }
-    #top h1, #top h2, #top h3, #top h4, #top h5, #top h6 {
-      padding-bottom: 1em; }
-
-  #main {
+    margin-left: 370px;
     padding: 40px;
-    margin-left: 310px;
     padding-top: 50px; }
-    #main h1 {
-      font-size: 83px;
-      margin-bottom: 0em; }
-    #main h2 {
-      font-size: 50px; }
-    #main h3 {
-      font-size: 32px; }
-    #main h4 {
-      font-size: 24px; }
-    #main p {
-      font-size: 20px; } }
+
+  #topnav ul {
+    padding: 0;
+    margin-left: 40px; }
+  #topnav li {
+    display: block;
+    color: #999999;
+    margin: 4px 0; }
+  #topnav a {
+    height: 50px;
+    padding: 20px 0;
+    line-height: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    font-weight: 500; }
+    #topnav a:hover {
+      text-decoration: none;
+      border-right: 4px solid #e5e5e5;
+      color: #7f7f7f; }
+    #topnav a.active {
+      color: black;
+      border-right: 6px solid #b94222; } }
+.no-svg #branding {
+  background: url("../../img/logo.png"); }

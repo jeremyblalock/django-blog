@@ -12,10 +12,8 @@
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-<link rel="stylesheet" href="{{ STATIC_URL }}css/lib/html5reset.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/compiled/main.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}resources/neosans/stylesheet.css">
-<link href='http://fonts.googleapis.com/css?family=Averia+Serif+Libre:300,700,300italic,700italic' rel='stylesheet' type='text/css'>
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -32,8 +30,8 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
+  {% include 'header.html' %}
   {% block main %}
-  <p>Hello world! This is HTML5 Boilerplate.</p>
   {% endblock %}
   {% block templates %}
   {% endblock %}
